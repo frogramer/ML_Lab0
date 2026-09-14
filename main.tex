@@ -1,0 +1,196 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage[left=25mm, right=15mm, top=20mm, bottom=20mm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{fvextra}
+
+\definecolor{codegray}{gray}{0.95}
+
+\DefineVerbatimEnvironment{code}{Verbatim}{
+    breaklines=true,
+    breakanywhere=true,
+    frame=single,
+    framerule=0.4pt,
+    fontsize=\small,
+    bgcolor=codegray,
+    rulecolor=\color{black},
+    samepage=false
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    {\scshape\large Министерство науки и высшего образования Российской Федерации\par}
+    \vspace{0.5cm}
+    {\scshape\large Федеральное государственное автономное образовательное учреждение\\
+    высшего образования\par}
+    {\scshape\large «Национальный исследовательский университет ИТМО»\par}
+    \vspace{0.5cm}
+    {\large Институт математики\par}
+    \vspace{3cm}
+
+    {\Large\bfseries Лабораторная работа №0 (вводная)\par}
+    \vspace{0.5cm}
+    {\large Знакомство с системой контроля версий git и сервисом GitHub\par}
+    \vspace{3cm}
+
+    \begin{flushright}
+        \begin{tabular}{l}
+            Студент: \textit{Бузырев Иван Михайлович}\\
+            Группа: \textit{R-3341}\\
+            Преподаватель: \textit{Шаврин А.А.}
+        \end{tabular}
+    \end{flushright}
+
+    \vfill
+    {\large Санкт-Петербург\\ \the\year\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Текст задания}
+
+\subsection*{Задание 1}
+\textbf{Цель:} поразмышлять о своих целях и задачах на текущий семестр.
+
+\begin{enumerate}
+    \item С помощью веб-интерфейса GitHub создать файл \texttt{goals.md} в репозитории.
+    \item Используя язык разметки markdown, создать заголовки <<Мой опыт>> и <<Мои цели>>.
+    \item Написать один абзац (1--5 предложений) о своём опыте по разработке ПО. Добавить работающую ссылку (например, на профиль в GitHub).
+    \item Создать нумерованный список из 2--3 целей на курс.
+    \item Создать ненумерованный список из 3--9 задач для достижения целей.
+    \item Создать папку \texttt{resources} в корне репозитория, загрузить в неё изображение (\texttt{.png/.jpg/.jpeg}) и добавить его в \texttt{.md} файл.
+    \item Закоммитить файлы в репозиторий на GitHub.
+    \item Проверить, что \texttt{.md} файл отформатирован и отображается корректно.
+\end{enumerate}
+
+\subsection*{Задание 2}
+\textbf{Цель:} научиться использовать git из командной строки.
+
+\begin{enumerate}
+    \item Ознакомиться с инструкцией по работе с git и GitHub из командной строки.
+    \item Клонировать репозиторий командой \texttt{git clone <ссылка>}.
+    \item Создать новый файл \texttt{info.md} в локальной копии репозитория.
+    \item Записать в файл ФИО, название ОС, текущие дату и время~--- каждое с новой строки (3 строки).
+    \item Выполнить \texttt{git add info.md} и \texttt{git commit}, ввести краткое описание коммита.
+    \item Выполнить \texttt{git push}.
+    \item Создать папку \texttt{data} в корне репозитория и файл \texttt{dataset.csv} в ней.
+    \item Создать файл \texttt{.gitignore} со строкой \texttt{data/}.
+    \item Закоммитить \texttt{.gitignore}, попробовать закоммитить \texttt{data/dataset.csv}, отправить коммиты через \texttt{git push}.
+    \item Объяснить полученный результат в отчёте.
+\end{enumerate}
+
+\subsection*{Задание 3}
+\textbf{Цель:} соблюсти формальности.
+
+Подготовить отчёт по лабораторной работе (титульный лист, текст задания, результат выполнения). Сохранить отчёт в файле \texttt{report.pdf} в репозитории на GitHub.
+
+\newpage
+\section{Результаты выполнения}
+
+\subsection{Задание 1. Файл \texttt{goals.md}}
+
+\begin{code}
+# Мой опыт
+К сожалению, я не применял свои навыки программирования нигде, за пределами прохождения курсов ИТМО. Мой гитхаб: https://github.com/frogramer. Однако он заброшен, т.к. после прохождения дисциплины "Программирование" (Java) я ни разу так и не пользовался им
+# Мои цели
+1) Узнать, как обучают современные нейронные сети
+2) Получить опыт в обучении нейронных сетей
+3) Научиться работать с ИИ "по другую сторону" (со стороны разработчика)
+## Задачи
+- Научиться работать с GitHub
+- Научиться обучать нейронные модели различными способами
+- Научиться проверять обученные модели
+![кот](resources/cat.jpg)
+\end{code}
+
+Изображение, добавленное в файл, находится в папке \texttt{resources} и вставлено в \texttt{goals.md} следующей строкой:
+
+\begin{code}
+![кот](resources/cat.jpg)
+\end{code}
+
+\subsection{Задание 2. Файл \texttt{info.md}}
+
+Шаблон содержимого файла:
+
+\begin{code}
+<Фамилия Имя Отчество>
+<Операционная система>
+<ГГГГ-ММ-ДД ЧЧ:ММ>
+\end{code}
+
+Фактическое содержимое:
+
+\begin{code}
+Бузырев Иван Михайлович
+Windows 11
+2026-09-14 12:49
+\end{code}
+
+Коммит и отправка выполнены командами:
+
+\begin{code}
+git add info.md
+git commit
+git push
+\end{code}
+
+\subsection{Задание 2. Файл \texttt{.gitignore}}
+
+Содержимое файла:
+
+\begin{code}
+data/
+\end{code}
+
+\subsection{Объяснение результата попытки закоммитить 
+
+После создания папки \texttt{data} и файла \texttt{data/dataset.csv} был создан файл \texttt{.gitignore} со строкой \texttt{data/}, которая указывает Git игнорировать всё содержимое папки \texttt{data}. Файл \texttt{.gitignore} был успешно закоммичен командой:
+
+\begin{code}
+git add .gitignore
+git commit
+git push
+\end{code}
+
+Затем была предпринята попытка закоммитить файл \texttt{data/dataset.csv}:
+
+\begin{code}
+git add data/dataset.csv
+git status
+git commit
+\end{code}
+
+Git выдал предупреждение о том, что путь игнорируется одним из правил \texttt{.gitignore}:
+
+\begin{code}
+The following paths are ignored by one of your .gitignore files:
+data
+hint: Use -f if you really want to add them.
+\end{code}
+
+При выполнении \texttt{git commit} было получено сообщение \texttt{nothing to commit, working tree clean}~--- коммит не был создан, так как файл не попал в индекс. После \texttt{git push} папка \texttt{data/} и файл \texttt{dataset.csv} в удалённом репозитории на GitHub не появились.
+
+\textbf{Вывод.} Файл \texttt{.gitignore} корректно исключает указанные пути из отслеживания Git. Это позволяет не загружать в репозиторий большие датасеты, временные файлы, кэш и другие данные, которые не должны версионироваться. При необходимости файл можно добавить принудительно командой \texttt{git add -f <путь>}, однако в рамках задания этого делать не требовалось. Следует также помнить, что \texttt{.gitignore} не влияет на уже отслеживаемые файлы: если файл был закоммичен до добавления правила, его необходимо сначала убрать из индекса командой \texttt{git rm {-}{-}cached <путь>}.
+
+\section{Выводы}
+
+В ходе лабораторной работы были освоены базовые приёмы работы с системой контроля версий Git и сервисом GitHub: создание файлов через веб-интерфейс, клонирование репозитория, работа с индексом, коммиты и отправка изменений через \texttt{git push}. Также было изучено назначение файла \texttt{.gitignore} и продемонстрировано, что пути, указанные в нём, не попадают в репозиторий.
+
+\end{document}
